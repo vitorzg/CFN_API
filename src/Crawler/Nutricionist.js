@@ -1,11 +1,13 @@
 const puppeteer = require('puppeteer');
 
-async function FindNutricionist( __subs ){
+async function FindNutricionist( __subs, __nome ){
     try{
         const browser = await puppeteer.launch({
+            defaultNavigationTimeout: 10000,
             args: [
                 '--no-sandbox',
                 '--disable-setuid-sandbox',
+                
             ],
         });
         const page = await browser.newPage();
@@ -13,6 +15,7 @@ async function FindNutricionist( __subs ){
         //Espera o carregamento do componente
         await page.waitFor('input[name="registro"]');
         //Digita dentro de um campo selecionado
+        await page.type('input[name="nome"]', __nome.toUpperCase());
         await page.type('input[name="registro"]', __subs.toString());
         //Pressiona uma tecla do teclado simulando-a
         await page.keyboard.press('Enter');

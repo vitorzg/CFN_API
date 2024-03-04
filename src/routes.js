@@ -4,7 +4,7 @@ const NutricionistController = require('./controllers/NutricionistController');
 
 const routes = express.Router();
 
-routes.get('/findbysubscription/:subs', NutricionistController.index);
+routes.get('/findbysubscription/:subs/:name', NutricionistController.index);
 
 routes.get('/',(req, res)=>{
     return res.status(200).send(
