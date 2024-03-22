@@ -4,7 +4,6 @@ CFN API is a API to scrapy data of CFN (Consulta Federal de Nutricionistas) and 
 
 ## Usage
 
-Make requests on this [link](https://consult-cfn.herokuapp.com/findbysubscription/) changing sub.
 
 ```node
 const axios = require('axios');
